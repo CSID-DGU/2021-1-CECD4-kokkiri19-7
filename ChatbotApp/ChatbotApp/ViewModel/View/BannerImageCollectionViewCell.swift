@@ -33,7 +33,7 @@ final class BannerImageCollectionViewCell: UICollectionViewCell {
             bannerImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bannerImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             bannerImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            bannerImageView.heightAnchor.constraint(equalToConstant: 250),
+            bannerImageView.heightAnchor.constraint(equalToConstant: 300),
         ])
     }
     

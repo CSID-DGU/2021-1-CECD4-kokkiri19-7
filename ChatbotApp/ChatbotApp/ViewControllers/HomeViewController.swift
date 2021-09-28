@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var nicknameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var characterImageView: UIImageView!
     private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +51,7 @@ final class HomeViewController: UIViewController {
         self.view.addSubview(pageControl)
         NSLayoutConstraint.activate([
             pageControl.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: self.collectionView.safeAreaLayoutGuide.topAnchor, constant: 230)
+            pageControl.bottomAnchor.constraint(equalTo: self.collectionView.safeAreaLayoutGuide.topAnchor, constant: 280)
         ])
     }
     
@@ -66,6 +67,12 @@ final class HomeViewController: UIViewController {
                 self?.locationLabel.text = text
             }
         })
+        
+        viewModel.characterImage.bind { [weak self] image in
+            DispatchQueue.main.async {
+                self?.characterImageView.image = image
+            }
+        }
         
         viewModel.bannerImages.bind({ [weak self] images in
             DispatchQueue.main.async {
@@ -98,7 +105,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 250)
+        return CGSize(width: UIScreen.main.bounds.width, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
