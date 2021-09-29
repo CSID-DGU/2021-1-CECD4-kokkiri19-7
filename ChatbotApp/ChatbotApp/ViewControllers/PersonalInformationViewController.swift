@@ -263,7 +263,14 @@ final class PersonalInformationViewController: UIViewController {
         alert.addAction(cancel)
         alert.addAction(fix)
         alert.addAction(logout)
-        self.present(alert, animated: true, completion: nil)
+        
+        if traitCollection.userInterfaceIdiom == .phone {
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            alert.popoverPresentationController?.barButtonItem = sender
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     //MARK:- Notification
     private func registerNotification() {
