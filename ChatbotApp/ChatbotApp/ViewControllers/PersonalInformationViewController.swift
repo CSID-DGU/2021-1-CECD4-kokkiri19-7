@@ -245,7 +245,7 @@ final class PersonalInformationViewController: UIViewController {
             self?.settedScrollView.isHidden = true
         }
         let logout = UIAlertAction(title: "로그아웃", style: .destructive) { [weak self] _ in
-            UserApi.shared.logout { error in
+            UserApi.shared.unlink { error in
                 if let error = error {
                     print(error)
                 }
