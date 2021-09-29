@@ -14,7 +14,6 @@ class ChatbotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewControllerBackground()
         configureChatbot()
         setupNotificationCenter()
     }
@@ -23,10 +22,6 @@ class ChatbotViewController: UIViewController {
         super.viewWillAppear(animated)
         setUpLoadingIndicatorView()
         startChatbot()
-    }
-    
-    private func setupViewControllerBackground() {
-        self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
     //MARK: - start chatbot
