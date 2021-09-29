@@ -10,7 +10,6 @@ import Kommunicate
 
 class ChatbotViewController: UIViewController {
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
-    let userID = Kommunicate.randomId()
     let kmUser = KMUser()
     
     override func viewDidLoad() {
@@ -43,8 +42,12 @@ class ChatbotViewController: UIViewController {
     
     private func createConversation() {
         let botId = ["aibot-mgack"]
+        guard let email = User.shared.email else {
+            return
+        }
+        
         Kommunicate.createConversation(
-            userId: userID,
+            userId: email,
             botIds: botId,
             useLastConversation: false,
             completion: { response in
@@ -55,9 +58,14 @@ class ChatbotViewController: UIViewController {
     }
     
     private func registerUser() {
-        kmUser.userId = userID
-        kmUser.displayName = "사용자"
+        kmUser.userId = User.shared.email
+        kmUser.displayName = User.shared.nickname
         kmUser.applicationId = Configuration.AppID
+        
+        let userMetaData = NSMutableDictionary()
+        userMetaData["sex"] = User.shared.gender?.rawValue
+        userMetaData["age"] = "\(User.shared.age)"
+        kmUser.metadata = userMetaData
         
         Kommunicate.registerUser(kmUser) { response, error in
             guard error == nil else {
