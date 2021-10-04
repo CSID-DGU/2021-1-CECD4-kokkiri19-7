@@ -25,6 +25,9 @@
 		26DA407C26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */; };
 		26DA407E26F7916700F07DA4 /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407D26F7916700F07DA4 /* APIRequestLoader.swift */; };
 		26DA408126F7943700F07DA4 /* ChatbotError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA408026F7943700F07DA4 /* ChatbotError.swift */; };
+		26DC4E4A270A9D3100AA240C /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E49270A9D3100AA240C /* RecommendViewModel.swift */; };
+		26DC4E4C270A9FD200AA240C /* RecommendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E4B270A9FD200AA240C /* RecommendList.swift */; };
+		26DC4E4E270AA07800AA240C /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E4D270AA07800AA240C /* Recommend.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
@@ -53,6 +56,9 @@
 		26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		26DA407D26F7916700F07DA4 /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
 		26DA408026F7943700F07DA4 /* ChatbotError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotError.swift; sourceTree = "<group>"; };
+		26DC4E49270A9D3100AA240C /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		26DC4E4B270A9FD200AA240C /* RecommendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendList.swift; sourceTree = "<group>"; };
+		26DC4E4D270AA07800AA240C /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				26E4D75A26F0D95E00315A67 /* User.swift */,
+				26DC4E4B270A9FD200AA240C /* RecommendList.swift */,
+				26DC4E4D270AA07800AA240C /* Recommend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,8 +152,8 @@
 				26D795E42648B3FF00CC1713 /* AppDelegate.swift */,
 				26D795E62648B3FF00CC1713 /* SceneDelegate.swift */,
 				26D795EA2648B3FF00CC1713 /* Main.storyboard */,
-				26D795F02648B40100CC1713 /* Assets.xcassets */,
 				26D795F22648B40100CC1713 /* LaunchScreen.storyboard */,
+				26D795F02648B40100CC1713 /* Assets.xcassets */,
 				26D795F52648B40100CC1713 /* Info.plist */,
 				26D795ED2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld */,
 			);
@@ -157,6 +165,7 @@
 			children = (
 				26DA407A26F75AD500F07DA4 /* View */,
 				26DA407526F7549D00F07DA4 /* HomeViewModel.swift */,
+				26DC4E49270A9D3100AA240C /* RecommendViewModel.swift */,
 				26DA407826F7556200F07DA4 /* Observable.swift */,
 			);
 			path = ViewModel;
@@ -320,8 +329,11 @@
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
+				26DC4E4C270A9FD200AA240C /* RecommendList.swift in Sources */,
+				26DC4E4E270AA07800AA240C /* Recommend.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
 				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
+				26DC4E4A270A9D3100AA240C /* RecommendViewModel.swift in Sources */,
 				26DA407E26F7916700F07DA4 /* APIRequestLoader.swift in Sources */,
 				26DA407C26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift in Sources */,
 				26DA407926F7556200F07DA4 /* Observable.swift in Sources */,
