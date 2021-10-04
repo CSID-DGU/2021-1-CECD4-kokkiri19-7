@@ -245,7 +245,7 @@ final class PersonalInformationViewController: UIViewController {
             self?.settedScrollView.isHidden = true
         }
         let logout = UIAlertAction(title: "로그아웃", style: .destructive) { [weak self] _ in
-            UserApi.shared.logout { error in
+            UserApi.shared.unlink { error in
                 if let error = error {
                     print(error)
                 }
@@ -263,7 +263,14 @@ final class PersonalInformationViewController: UIViewController {
         alert.addAction(cancel)
         alert.addAction(fix)
         alert.addAction(logout)
-        self.present(alert, animated: true, completion: nil)
+        
+        if traitCollection.userInterfaceIdiom == .phone {
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            alert.popoverPresentationController?.barButtonItem = sender
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     //MARK:- Notification
     private func registerNotification() {

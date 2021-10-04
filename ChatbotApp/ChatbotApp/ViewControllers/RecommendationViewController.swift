@@ -11,10 +11,5 @@ final class RecommendationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRecommendationViewControllerBackground()
-    }
-    
-    private func setupRecommendationViewControllerBackground() {
-        self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
 }
