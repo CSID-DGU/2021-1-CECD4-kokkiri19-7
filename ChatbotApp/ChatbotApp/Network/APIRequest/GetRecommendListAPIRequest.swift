@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct GetRecommendListAPIRequest: APIRequest {
+    func makeRequest(from id: Int) throws -> URLRequest {
+        guard var components = URLComponents(string: ChatbotAPI.baseURL) else {
+            throw ChatbotError.failToMakeURL
+        }
+        components.path += "item/\(id)"
+        
+        return URLRequest(url: components.url!)
+    }
+    
+    func parseResponse(data: Data) throws -> Recommend {
+        return try JSONDecoder().decode(Recommend.self, from: data)
+    }
+}
