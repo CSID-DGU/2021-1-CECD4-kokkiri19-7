@@ -32,6 +32,7 @@
 		26DC4E53270AA27100AA240C /* GetImageAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */; };
 		26DC4E55270AA30900AA240C /* GetRecommendListAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */; };
 		26DC4E57270AA40A00AA240C /* ChatbotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E56270AA40A00AA240C /* ChatbotAPI.swift */; };
+		26DC4E59270AA4CA00AA240C /* GetBannerAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
@@ -67,6 +68,7 @@
 		26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageAPIRequest.swift; sourceTree = "<group>"; };
 		26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendListAPIRequest.swift; sourceTree = "<group>"; };
 		26DC4E56270AA40A00AA240C /* ChatbotAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotAPI.swift; sourceTree = "<group>"; };
+		26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBannerAPIRequest.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */,
 				26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */,
+				26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */,
 			);
 			path = APIRequest;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DC4E59270AA4CA00AA240C /* GetBannerAPIRequest.swift in Sources */,
 				26DA408126F7943700F07DA4 /* ChatbotError.swift in Sources */,
 				26DC4E53270AA27100AA240C /* GetImageAPIRequest.swift in Sources */,
 				26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */,
