@@ -29,6 +29,10 @@
 		26DC4E4C270A9FD200AA240C /* RecommendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E4B270A9FD200AA240C /* RecommendList.swift */; };
 		26DC4E4E270AA07800AA240C /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E4D270AA07800AA240C /* Recommend.swift */; };
 		26DC4E50270AA1A400AA240C /* Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E4F270AA1A400AA240C /* Banners.swift */; };
+		26DC4E53270AA27100AA240C /* GetImageAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */; };
+		26DC4E55270AA30900AA240C /* GetRecommendListAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */; };
+		26DC4E57270AA40A00AA240C /* ChatbotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E56270AA40A00AA240C /* ChatbotAPI.swift */; };
+		26DC4E59270AA4CA00AA240C /* GetBannerAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
@@ -61,6 +65,10 @@
 		26DC4E4B270A9FD200AA240C /* RecommendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendList.swift; sourceTree = "<group>"; };
 		26DC4E4D270AA07800AA240C /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		26DC4E4F270AA1A400AA240C /* Banners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banners.swift; sourceTree = "<group>"; };
+		26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageAPIRequest.swift; sourceTree = "<group>"; };
+		26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendListAPIRequest.swift; sourceTree = "<group>"; };
+		26DC4E56270AA40A00AA240C /* ChatbotAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotAPI.swift; sourceTree = "<group>"; };
+		26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBannerAPIRequest.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -119,8 +127,10 @@
 		269186E226654066001EB4BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				26DC4E51270AA25500AA240C /* APIRequest */,
 				269186E326654077001EB4BA /* Configuration.swift */,
 				26DA407D26F7916700F07DA4 /* APIRequestLoader.swift */,
+				26DC4E56270AA40A00AA240C /* ChatbotAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -188,6 +198,16 @@
 				26DA408026F7943700F07DA4 /* ChatbotError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		26DC4E51270AA25500AA240C /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */,
+				26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */,
+				26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */,
+			);
+			path = APIRequest;
 			sourceTree = "<group>";
 		};
 		5D1C125142846F11CFE33B15 /* Pods */ = {
@@ -321,7 +341,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DC4E59270AA4CA00AA240C /* GetBannerAPIRequest.swift in Sources */,
 				26DA408126F7943700F07DA4 /* ChatbotError.swift in Sources */,
+				26DC4E53270AA27100AA240C /* GetImageAPIRequest.swift in Sources */,
 				26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */,
 				26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */,
 				269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */,
@@ -334,8 +356,10 @@
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
 				26DC4E4C270A9FD200AA240C /* RecommendList.swift in Sources */,
+				26DC4E57270AA40A00AA240C /* ChatbotAPI.swift in Sources */,
 				26DC4E4E270AA07800AA240C /* Recommend.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
+				26DC4E55270AA30900AA240C /* GetRecommendListAPIRequest.swift in Sources */,
 				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
 				26DC4E4A270A9D3100AA240C /* RecommendViewModel.swift in Sources */,
 				26DA407E26F7916700F07DA4 /* APIRequestLoader.swift in Sources */,
