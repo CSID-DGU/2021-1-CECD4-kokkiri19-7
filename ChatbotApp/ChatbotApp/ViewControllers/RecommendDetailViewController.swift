@@ -18,6 +18,14 @@ final class RecommendDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
     }
-
+    
+    private func configureView() {
+        self.titleLabel.text = recommend?.title
+        self.contentLabel.text = recommend?.content
+        self.navigationTitleItem.title = recommend?.classification
+        self.gobackButton.tintColor = .systemBlue
+    }
+    
 }
