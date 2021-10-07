@@ -14,6 +14,7 @@ final class RecommendCollectionViewCell: UICollectionViewCell {
         static let welfare = "복지"
     }
 
+    static let identifier = "RecommendCollectionViewCell"
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var classificationLabel: UILabel!
     @IBOutlet private var contentLabel: UILabel!
