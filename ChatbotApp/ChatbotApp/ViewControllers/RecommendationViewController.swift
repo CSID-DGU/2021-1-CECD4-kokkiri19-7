@@ -39,5 +39,27 @@ final class RecommendationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureRecommendationListView()
+    }
+    
+    private func configureRecommendationListView() {
+        let navigationItem = UINavigationItem(title: "삼식이의 추천")
+        navigationBar.setItems([navigationItem], animated: false)
+        view.addSubview(navigationBar)
+        
+        view.addSubview(recommendCollectionView)
+        recommendCollectionView.delegate = self
+        recommendCollectionView.dataSource = self
+        
+        NSLayoutConstraint.activate([
+            navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            navigationBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            navigationBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            recommendCollectionView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: 10),
+            recommendCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            recommendCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            recommendCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 }
