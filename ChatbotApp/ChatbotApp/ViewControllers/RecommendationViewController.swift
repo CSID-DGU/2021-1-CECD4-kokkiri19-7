@@ -21,6 +21,12 @@ final class RecommendationViewController: UIViewController {
     private var viewModel = RecommendListViewModel()
     weak var detailViewConfigurableDelegate: DetailViewConfigurable?
     
+    private var navigationBar: UINavigationBar = {
+        let navigationbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        navigationbar.translatesAutoresizingMaskIntoConstraints = false
+        return navigationbar
+    }()
+    
     private var recommendCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
