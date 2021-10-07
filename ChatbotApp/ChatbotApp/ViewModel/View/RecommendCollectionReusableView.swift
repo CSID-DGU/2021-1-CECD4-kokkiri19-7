@@ -16,4 +16,14 @@ final class RecommendCollectionReusableView: UICollectionReusableView {
         indicator.style = .medium
         return indicator
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureFooterView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureFooterView()
+    }
 }
