@@ -139,4 +139,19 @@ extension RecommendationViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: view.frame.size.height / 25)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let recommendDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: RecommendDetailViewController.identifier) as? RecommendDetailViewController else {
+            return
+        }
+        
+        guard let recommend = self.viewModel.recommendList.value?[indexPath.row] else {
+            return
+        }
+        
+        self.detailViewConfigurableDelegate = recommendDetailViewController
+        self.detailViewConfigurableDelegate?.configure(recommend)
+        recommendDetailViewController.modalPresentationStyle = .fullScreen
+        self.present(recommendDetailViewController, animated: true, completion: nil)
+    }
 }
