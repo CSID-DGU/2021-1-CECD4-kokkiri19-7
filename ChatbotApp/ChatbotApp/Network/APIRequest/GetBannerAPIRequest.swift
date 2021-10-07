@@ -8,11 +8,11 @@
 import Foundation
 
 struct GetBannerAPIRequest: APIRequest {
-    func makeRequest(from id: Int) throws -> URLRequest {
+    func makeRequest(from user: UserIdentifer) throws -> URLRequest {
         guard var components = URLComponents(string: ChatbotAPI.baseURL) else {
             throw ChatbotError.failToMakeURL
         }
-        components.path += "item/\(id)"
+        components.path += ""
         
         return URLRequest(url: components.url!)
     }
