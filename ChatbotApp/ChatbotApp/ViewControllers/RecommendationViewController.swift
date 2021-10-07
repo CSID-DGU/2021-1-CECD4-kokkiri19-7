@@ -8,7 +8,8 @@
 import UIKit
 
 final class RecommendationViewController: UIViewController {
-
+    static let identifier = "RecommendationViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
