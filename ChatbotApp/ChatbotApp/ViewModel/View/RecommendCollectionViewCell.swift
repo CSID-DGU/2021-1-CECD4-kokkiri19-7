@@ -8,10 +8,9 @@
 import UIKit
 
 final class RecommendCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private enum Classification {
+        static let tour = "관광"
+        static let policy = "정책"
+        static let welfare = "복지"
     }
-
 }
