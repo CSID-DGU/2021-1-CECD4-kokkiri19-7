@@ -37,4 +37,11 @@ final class RecommendCollectionViewCell: UICollectionViewCell {
         
         contentLabel.text = "내용: \(recommend.content)"
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        classificationLabel.text = nil
+        contentLabel.text = nil
+    }
 }
