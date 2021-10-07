@@ -40,6 +40,7 @@ final class RecommendationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureRecommendationListView()
+        bindViewModel()
     }
     
     private func configureRecommendationListView() {
@@ -61,5 +62,14 @@ final class RecommendationViewController: UIViewController {
             recommendCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             recommendCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    //MARK:- bindViewModel
+    private func bindViewModel() {
+        viewModel.recommendList.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.recommendCollectionView.reloadData()
+            }
+        }
     }
 }
