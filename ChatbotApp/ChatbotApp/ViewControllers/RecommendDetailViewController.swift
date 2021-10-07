@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class RecommendDetailViewController: UIViewController {
     static let identifier = "RecommendDetailViewController"
@@ -28,4 +29,11 @@ final class RecommendDetailViewController: UIViewController {
         self.gobackButton.tintColor = .systemBlue
     }
     
+    @IBAction private func didGoButtonTouchedUp(_ sender: UIButton) {
+        if let websiteURL = recommend?.url,
+           let url = URL(string: websiteURL) {
+            let view: SFSafariViewController = SFSafariViewController(url: url)
+            self.present(view, animated: true, completion: nil)
+        }
+    }
 }
