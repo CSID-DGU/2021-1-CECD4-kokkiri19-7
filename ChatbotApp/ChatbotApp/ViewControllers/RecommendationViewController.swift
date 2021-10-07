@@ -155,3 +155,17 @@ extension RecommendationViewController: UICollectionViewDelegate, UICollectionVi
         self.present(recommendDetailViewController, animated: true, completion: nil)
     }
 }
+
+//MARK:- Paging
+extension RecommendationViewController {
+    private func controlLoadingIndicator(state: LoadingIndicatorState) {
+        if let footerView = self.recommendCollectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionFooter).first as? RecommendCollectionReusableView {
+            switch state {
+            case .start:
+                footerView.startLoading()
+            case .stop:
+                footerView.stopLoading()
+            }
+        }
+    }
+}
