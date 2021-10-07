@@ -14,6 +14,7 @@
 		26B79302270E94A200BB3D06 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79301270E94A200BB3D06 /* ImageCacheManager.swift */; };
 		26B79304270E9A3300BB3D06 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79303270E9A3300BB3D06 /* UserSetting.swift */; };
 		26B79306270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79305270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift */; };
+		26B79308270E9E5400BB3D06 /* UserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79307270E9E5400BB3D06 /* UserIdentifier.swift */; };
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
 		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
@@ -51,6 +52,7 @@
 		26B79301270E94A200BB3D06 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		26B79303270E9A3300BB3D06 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		26B79305270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserSettingAPIReqeust.swift; sourceTree = "<group>"; };
+		26B79307270E9E5400BB3D06 /* UserIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifier.swift; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				26DC4E4B270A9FD200AA240C /* RecommendList.swift */,
 				26DC4E4D270AA07800AA240C /* Recommend.swift */,
 				26DC4E4F270AA1A400AA240C /* Banners.swift */,
+				26B79307270E9E5400BB3D06 /* UserIdentifier.swift */,
 				26B79303270E9A3300BB3D06 /* UserSetting.swift */,
 			);
 			path = Model;
@@ -360,6 +363,7 @@
 				26DC4E50270AA1A400AA240C /* Banners.swift in Sources */,
 				26DA407626F7549D00F07DA4 /* HomeViewModel.swift in Sources */,
 				26B79302270E94A200BB3D06 /* ImageCacheManager.swift in Sources */,
+				26B79308270E9E5400BB3D06 /* UserIdentifier.swift in Sources */,
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
 				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
