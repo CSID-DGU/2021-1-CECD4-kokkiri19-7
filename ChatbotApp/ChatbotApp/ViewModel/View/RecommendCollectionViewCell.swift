@@ -13,4 +13,8 @@ final class RecommendCollectionViewCell: UICollectionViewCell {
         static let policy = "정책"
         static let welfare = "복지"
     }
+
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var classificationLabel: UILabel!
+    @IBOutlet private var contentLabel: UILabel!
 }
