@@ -37,4 +37,8 @@ final class RecommendCollectionReusableView: UICollectionReusableView {
             loadingIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+    
+    func startLoading() {
+        loadingIndicator.startAnimating()
+    }
 }
