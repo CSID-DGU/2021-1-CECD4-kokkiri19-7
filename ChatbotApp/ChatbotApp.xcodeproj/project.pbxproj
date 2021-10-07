@@ -13,6 +13,7 @@
 		269186E426654077001EB4BA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186E326654077001EB4BA /* Configuration.swift */; };
 		26B79302270E94A200BB3D06 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79301270E94A200BB3D06 /* ImageCacheManager.swift */; };
 		26B79304270E9A3300BB3D06 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79303270E9A3300BB3D06 /* UserSetting.swift */; };
+		26B79306270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79305270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift */; };
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
 		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 		269186E326654077001EB4BA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		26B79301270E94A200BB3D06 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		26B79303270E9A3300BB3D06 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		26B79305270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserSettingAPIReqeust.swift; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */,
 				26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */,
 				26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */,
+				26B79305270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift */,
 			);
 			path = APIRequest;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DC4E59270AA4CA00AA240C /* GetBannerAPIRequest.swift in Sources */,
+				26B79306270E9C5800BB3D06 /* PostUserSettingAPIReqeust.swift in Sources */,
 				26DA408126F7943700F07DA4 /* ChatbotError.swift in Sources */,
 				26DC4E53270AA27100AA240C /* GetImageAPIRequest.swift in Sources */,
 				26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */,
