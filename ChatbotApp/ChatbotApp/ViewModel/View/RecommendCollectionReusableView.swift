@@ -26,4 +26,15 @@ final class RecommendCollectionReusableView: UICollectionReusableView {
         super.init(coder: coder)
         configureFooterView()
     }
+    
+    private func configureFooterView() {
+        addSubview(loadingIndicator)
+        
+        NSLayoutConstraint.activate([
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 30),
+            loadingIndicator.heightAnchor.constraint(equalTo: loadingIndicator.widthAnchor),
+            loadingIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
 }
