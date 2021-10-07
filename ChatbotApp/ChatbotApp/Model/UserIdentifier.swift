@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct UserIdentifer: Encodable {
+    let email: String
+    let nickname: String
+}
