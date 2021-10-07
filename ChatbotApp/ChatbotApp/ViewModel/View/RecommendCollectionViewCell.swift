@@ -17,31 +17,36 @@ final class RecommendCollectionViewCell: UICollectionViewCell {
     static let identifier = "RecommendCollectionViewCell"
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var classificationLabel: UILabel!
-    @IBOutlet private var contentLabel: UILabel!
+    @IBOutlet private var summaryLabel: UILabel!
     
     func configureCell(with recommend: Recommend) {
         classificationLabel.text = "[\(recommend.classification)]"
+        classificationLabel.font = .preferredFont(forTextStyle: .headline)
+        
+        summaryLabel.font = .preferredFont(forTextStyle: .body)
         switch recommend.classification {
         case Classification.tour:
             classificationLabel.textColor = .systemOrange
+            summaryLabel.text = "내용: \(recommend.summary)"
         case Classification.policy:
             classificationLabel.textColor = .systemRed
+            summaryLabel.text = "\(recommend.summary)"
         case Classification.welfare:
             classificationLabel.textColor = .systemBlue
+            summaryLabel.text = "\(recommend.summary)"
         default:
             classificationLabel.textColor = .black
+            summaryLabel.text = "내용: \(recommend.summary)"
         }
         
         titleLabel.text = "제목: \(recommend.title)"
         titleLabel.font = .preferredFont(forTextStyle: .headline)
-        
-        contentLabel.text = "내용: \(recommend.content)"
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = nil
         classificationLabel.text = nil
-        contentLabel.text = nil
+        summaryLabel.text = nil
     }
 }
