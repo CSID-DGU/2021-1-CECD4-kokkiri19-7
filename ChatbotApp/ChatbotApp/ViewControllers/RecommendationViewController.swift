@@ -8,6 +8,11 @@
 import UIKit
 
 final class RecommendationViewController: UIViewController {
+    private enum LoadingIndicatorState {
+        case start
+        case stop
+    }
+    
     static let identifier = "RecommendationViewController"
     private var viewModel = RecommendListViewModel()
 
