@@ -8,8 +8,6 @@
 import UIKit
 import SafariServices
 
-var images = ["메인화면소식1", "메인화면소식2", "메인화면소식3", "메인화면소식4"]
-
 final class HomeViewController: UIViewController {
     @IBOutlet private weak var nicknameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
@@ -34,7 +32,8 @@ final class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetch()
+        //viewModel.fetch()
+        viewModel.test()
     }
     
     private func configureImageCollectionView() {
