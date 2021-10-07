@@ -8,5 +8,5 @@
 import UIKit
 
 final class RecommendCollectionReusableView: UICollectionReusableView {
-        
+    static let identifier = "RecommendCollectionReusableView"
 }
