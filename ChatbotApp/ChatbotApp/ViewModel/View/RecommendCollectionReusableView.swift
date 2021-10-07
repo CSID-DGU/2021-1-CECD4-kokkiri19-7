@@ -41,4 +41,8 @@ final class RecommendCollectionReusableView: UICollectionReusableView {
     func startLoading() {
         loadingIndicator.startAnimating()
     }
+    
+    func stopLoading() {
+        loadingIndicator.stopAnimating()
+    }
 }
