@@ -8,7 +8,7 @@
 import UIKit
 
 final class RecommendDetailViewController: UIViewController {
-
+    static let identifier = "RecommendDetailViewController"
     override func viewDidLoad() {
         super.viewDidLoad()
     }
