@@ -11,6 +11,7 @@
 		269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186DB266533C0001EB4BA /* RecommendationViewController.swift */; };
 		269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186DE2665352E001EB4BA /* PersonalInformationViewController.swift */; };
 		269186E426654077001EB4BA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186E326654077001EB4BA /* Configuration.swift */; };
+		26B79302270E94A200BB3D06 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79301270E94A200BB3D06 /* ImageCacheManager.swift */; };
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
 		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 		269186DB266533C0001EB4BA /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		269186DE2665352E001EB4BA /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
 		269186E326654077001EB4BA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		26B79301270E94A200BB3D06 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				269186CA2663EAA2001EB4BA /* Colors.swift */,
 				26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */,
 				26DA407326F5CB3500F07DA4 /* Locations.swift */,
+				26B79301270E94A200BB3D06 /* ImageCacheManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */,
 				26DC4E50270AA1A400AA240C /* Banners.swift in Sources */,
 				26DA407626F7549D00F07DA4 /* HomeViewModel.swift in Sources */,
+				26B79302270E94A200BB3D06 /* ImageCacheManager.swift in Sources */,
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
 				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
