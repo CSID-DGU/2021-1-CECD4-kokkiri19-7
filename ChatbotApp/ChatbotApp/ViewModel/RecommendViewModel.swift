@@ -10,3 +10,9 @@ import Foundation
 final class RecommendViewModel {
     
 }
+
+extension RecommendViewModel {
+    var numberOfSections: Int {
+        return 1
+    }
+}
