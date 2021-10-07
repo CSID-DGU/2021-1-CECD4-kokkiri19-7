@@ -73,3 +73,9 @@ final class RecommendationViewController: UIViewController {
         }
     }
 }
+
+extension RecommendationViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections
+    }
+}
