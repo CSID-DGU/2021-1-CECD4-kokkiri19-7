@@ -168,4 +168,31 @@ extension RecommendationViewController {
             }
         }
     }
+    
+    private func beginPaging() {
+        viewModel.isPaging = true
+        
+        DispatchQueue.main.async {
+            self.controlLoadingIndicator(state: .start)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.viewModel.currentPage += 1
+            //self.viewModel.fetch(page: self.viewModel.currentPage)
+            self.viewModel.isPaging = false
+            self.controlLoadingIndicator(state: .stop)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset_y = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+        
+        if contentOffset_y > contentHeight - height {
+            if viewModel.isPaging == false && viewModel.hasNextPage {
+                beginPaging()
+            }
+        }
+    }
 }
