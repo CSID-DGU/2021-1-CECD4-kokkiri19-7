@@ -82,4 +82,19 @@ extension RecommendationViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.recommendList.value?.count ?? 0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        if let recommend = self.viewModel.recommendList.value?[indexPath.row] {
+            cell.configureCell(with: recommend)
+        }
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.systemGray.cgColor
+        cell.layer.cornerRadius = 20
+        
+        return cell
+    }
 }
