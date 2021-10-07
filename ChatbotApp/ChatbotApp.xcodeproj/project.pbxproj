@@ -17,6 +17,7 @@
 		26B79308270E9E5400BB3D06 /* UserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79307270E9E5400BB3D06 /* UserIdentifier.swift */; };
 		26B7930B270EA65800BB3D06 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B79309270EA65800BB3D06 /* RecommendCollectionViewCell.swift */; };
 		26B7930C270EA65800BB3D06 /* RecommendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B7930A270EA65800BB3D06 /* RecommendCollectionViewCell.xib */; };
+		26B7930E270EAD3000BB3D06 /* RecommendCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7930D270EAD3000BB3D06 /* RecommendCollectionReusableView.swift */; };
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
 		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
@@ -57,6 +58,7 @@
 		26B79307270E9E5400BB3D06 /* UserIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifier.swift; sourceTree = "<group>"; };
 		26B79309270EA65800BB3D06 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		26B7930A270EA65800BB3D06 /* RecommendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCollectionViewCell.xib; sourceTree = "<group>"; };
+		26B7930D270EAD3000BB3D06 /* RecommendCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionReusableView.swift; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */,
 				26B79309270EA65800BB3D06 /* RecommendCollectionViewCell.swift */,
 				26B7930A270EA65800BB3D06 /* RecommendCollectionViewCell.xib */,
+				26B7930D270EAD3000BB3D06 /* RecommendCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
 				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
+				26B7930E270EAD3000BB3D06 /* RecommendCollectionReusableView.swift in Sources */,
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
