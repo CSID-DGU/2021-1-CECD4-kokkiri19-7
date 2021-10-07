@@ -5,4 +5,9 @@
 //  Created by Yeon on 2021/10/07.
 //
 
-import Foundation
+import UIKit
+
+final class ImageCacheManager {
+    static let shared = NSCache<NSString, UIImage>()
+    private init() {}
+}
