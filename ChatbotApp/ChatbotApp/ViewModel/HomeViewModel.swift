@@ -59,7 +59,27 @@ final class HomeViewModel {
     }
     
     private func downloadImage(url: String) {
+        let imageAPIRequest = GetImageAPIRequest()
+        let apiRequestLoader = APIRequestLoader(apiReqeust: imageAPIRequest)
         
+        let cacheKey = NSString(string: url)
+        if let cachedImage = ImageCacheManager.shared.object(forKey: cacheKey) {
+            self.bannerImages.value?.append(cachedImage)
+            return
+        }
+        
+        apiRequestLoader.loadAPIReqeust(requestData: url) { [weak self] image, error in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let image = image else {
+                return
+            }
+            
+            ImageCacheManager.shared.setObject(image, forKey: cacheKey)
+            self?.bannerImages.value?.append(image)
+        }
     }
 }
 
