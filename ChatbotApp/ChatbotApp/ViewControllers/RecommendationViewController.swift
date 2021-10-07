@@ -97,4 +97,19 @@ extension RecommendationViewController: UICollectionViewDelegate, UICollectionVi
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        
+        let itemsPerRow: CGFloat = 1
+        let widthPadding = 10 * (itemsPerRow + 1)
+        let itemsPerColumn: CGFloat = 5
+        let heightPadding = 10 * (itemsPerRow + 1)
+        
+        let itemWidth = (width - widthPadding) / itemsPerRow
+        let itemHeight = (height - heightPadding) / itemsPerColumn
+        
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
 }
