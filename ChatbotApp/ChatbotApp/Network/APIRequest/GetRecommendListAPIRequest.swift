@@ -17,7 +17,7 @@ struct GetRecommendListAPIRequest: APIRequest {
         return URLRequest(url: components.url!)
     }
     
-    func parseResponse(data: Data) throws -> Recommend {
-        return try JSONDecoder().decode(Recommend.self, from: data)
+    func parseResponse(data: Data) throws -> RecommendList {
+        return try JSONDecoder().decode(RecommendList.self, from: data)
     }
 }
