@@ -37,3 +37,9 @@ final class RecommendDetailViewController: UIViewController {
         }
     }
 }
+
+extension RecommendDetailViewController: DetailViewConfigurable {
+    func configure(_ data: Recommend) {
+        self.recommend = data
+    }
+}

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailViewConfigurable: AnyObject {
+    func configure(_ data: Recommend)
+}
+
 final class RecommendationViewController: UIViewController {
     private enum LoadingIndicatorState {
         case start
@@ -15,7 +19,8 @@ final class RecommendationViewController: UIViewController {
     
     static let identifier = "RecommendationViewController"
     private var viewModel = RecommendListViewModel()
-
+    weak var detailViewConfigurableDelegate: DetailViewConfigurable?
+    
     private var recommendCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
