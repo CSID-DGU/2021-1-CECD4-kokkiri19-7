@@ -8,6 +8,11 @@
 import Foundation
 
 struct Banners: Decodable {
-    let imagURLs: [String]
-    let redirectURLs: [String]
+    let imageURLs: [String]?
+    let redirectURLs: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case imageURLs = "picture"
+        case redirectURLs = "address"
+    }
 }
