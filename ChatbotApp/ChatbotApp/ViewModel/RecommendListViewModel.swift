@@ -44,16 +44,24 @@ final class RecommendListViewModel {
     func test() {
         let firstContent = """
 지원내용: 산모신생아 건강관리 지원사업을 이용하는 서울시 자격확인 대상 출산가정에 본인부담금 90%를 추가로 지원
+
 주관부서문의처: 건강관리과 지역보건팀 ☎ 3396-6358, 3396-6354
+
 지원대상: 서울시 자격확인 대상 출산가정 ※산모 또는 배우자가 기초생활수급자 또는 차상위계층
+
 신청절차: 서비스 종료일 30일 이내 보건소 신청→ 지원
+
 구비서류: 통장사본
 """
         let secondContent = """
 지원내용: 매월 3만원
+
 주관부서문의처: 중구청 사회복지과 장애인복지팀 02-3396-5373
+
 지원대상: 신청일 기준 주민등록상 주소지가 '서울특별시 중구'인 장애정도가 '심한 장애'인 중 '국민기초생활수급자' 또는 '차상위 장애인'에 해당하는 사람
+
 신청절차: 거주지 동 주민센터에 신청
+
 구비서류: 신분증, 신청서류, 지급계좌 통장사본 등
 """
         let thirdContent = """
@@ -66,18 +74,21 @@ final class RecommendListViewModel {
                                    classification: "복지",
                                    content: firstContent,
                                    summary: "지원내용: 산모신생아 건강관리 지원사업을 이용하는 서울시 자격확인 대상 출산가정에 본인부담금 90%를 추가로 지원",
+                                   image: nil,
                                    url: "http://www.junggu.seoul.kr/content.do?cmsid=14386")
         
         let recommend2 = Recommend(title: "저소득 중증장애인 교통비 지원",
                                    classification: "복지",
                                    content: secondContent,
                                    summary: "지원내용: 매월 3만원",
+                                   image: nil,
                                    url: "http://www.junggu.seoul.kr/content.do?cmsid=14386")
         
         let recommend3 = Recommend(title: "한양도성문화제",
                                    classification: "관광",
                                    content: thirdContent,
                                    summary: thirdContent,
+                                   image: "http://tong.visitkorea.or.kr/cms/resource/76/2741576_image2_1.JPG",
                                    url:"http://www.junggu.seoul.kr/tour/content.do?cmsid=14987&contentId=1948539")
         
         let recommends = [recommend1, recommend2, recommend3, recommend1, recommend2, recommend3,recommend1, recommend2, recommend3, recommend1, recommend2, recommend3,]

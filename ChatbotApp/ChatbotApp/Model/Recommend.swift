@@ -12,5 +12,6 @@ struct Recommend: Decodable {
     let classification: String
     let content: String
     let summary: String
+    let image: String?
     let url: String
 }

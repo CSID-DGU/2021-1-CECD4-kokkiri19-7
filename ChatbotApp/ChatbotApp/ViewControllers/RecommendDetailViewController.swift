@@ -11,6 +11,7 @@ import SafariServices
 final class RecommendDetailViewController: UIViewController {
     static let identifier = "RecommendDetailViewController"
     private var recommend: Recommend?
+    @IBOutlet private weak var recommendImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var goButton: UIButton!
@@ -27,6 +28,20 @@ final class RecommendDetailViewController: UIViewController {
         self.contentLabel.text = recommend?.content
         self.navigationTitleItem.title = recommend?.classification
         self.gobackButton.tintColor = .systemBlue
+        
+        if let imageURL = recommend?.image {
+            self.recommendImageView.isHidden = false
+            let imageAPIRequest = GetImageAPIRequest()
+            let apiRequestLoader = APIRequestLoader(apiReqeust: imageAPIRequest)
+            
+            apiRequestLoader.loadAPIReqeust(requestData: imageURL) { [weak self] image, error in
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self?.recommendImageView.image = image
+                    }
+                }
+            }
+        }
     }
     
     @IBAction private func didGoButtonTouchedUp(_ sender: UIButton) {
@@ -35,6 +50,10 @@ final class RecommendDetailViewController: UIViewController {
             let view: SFSafariViewController = SFSafariViewController(url: url)
             self.present(view, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction private func didGoBackButtonTouchedUp(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
