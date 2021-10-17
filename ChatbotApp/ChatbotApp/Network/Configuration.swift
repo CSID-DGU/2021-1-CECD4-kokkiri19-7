@@ -8,7 +8,7 @@
 import Foundation
 
 enum Configuration {
-    static let AppID = "2d01bd9e6ff221e53af603cf8a78b8ee8"
-    static let APIKey = "27z0qxegmv1Q93CQOvHQOWhxURaieLgq"
+    static let AppID = "3bb5877c04b4c1dcf49bb23f371189f44"
+    static let APIKey = "yN3kfqjMxfRzvwdIjs4Rn19uzo4qlmVD"
     static let KakaoNativeAppKey = "f68646128138224a87490047f8e4af6c"
 }
