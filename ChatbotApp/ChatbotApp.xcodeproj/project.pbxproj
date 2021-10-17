@@ -45,6 +45,7 @@
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
 		26E4D76326F1CAAC00315A67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D76226F1CAAC00315A67 /* LoginViewController.swift */; };
+		26F5B89D271C15F700651F6C /* GetUserInformationAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5B89C271C15F700651F6C /* GetUserInformationAPIRequest.swift */; };
 		331735ECF21A7CCF00EE20CB /* Pods_ChatbotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CDA877AF6140B962DE85C3 /* Pods_ChatbotApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26E4D76226F1CAAC00315A67 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		26F5B89C271C15F700651F6C /* GetUserInformationAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInformationAPIRequest.swift; sourceTree = "<group>"; };
 		8C673E8732C45CACEEDD2C2D /* Pods-ChatbotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatbotApp.release.xcconfig"; path = "Target Support Files/Pods-ChatbotApp/Pods-ChatbotApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3CDA877AF6140B962DE85C3 /* Pods_ChatbotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatbotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95492555B7208351EF202D9 /* Pods-ChatbotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatbotApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatbotApp/Pods-ChatbotApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		26DC4E51270AA25500AA240C /* APIRequest */ = {
 			isa = PBXGroup;
 			children = (
+				26F5B89C271C15F700651F6C /* GetUserInformationAPIRequest.swift */,
 				26DC4E52270AA27100AA240C /* GetImageAPIRequest.swift */,
 				26DC4E54270AA30900AA240C /* GetRecommendListAPIRequest.swift */,
 				26DC4E58270AA4CA00AA240C /* GetBannerAPIRequest.swift */,
@@ -388,6 +391,7 @@
 				26DC4E4C270A9FD200AA240C /* RecommendList.swift in Sources */,
 				26DC4E57270AA40A00AA240C /* ChatbotAPI.swift in Sources */,
 				26DC4E4E270AA07800AA240C /* Recommend.swift in Sources */,
+				26F5B89D271C15F700651F6C /* GetUserInformationAPIRequest.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
 				26DC4E55270AA30900AA240C /* GetRecommendListAPIRequest.swift in Sources */,
 				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
