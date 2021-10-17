@@ -6,5 +6,5 @@
 //
 
 enum ChatbotAPI {
-    static let baseURL = ""
+    static let baseURL = "https://chatbot-43e27.de.r.appspot.com/"
 }

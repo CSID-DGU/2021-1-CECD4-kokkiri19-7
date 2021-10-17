@@ -12,7 +12,7 @@ struct GetBannerAPIRequest: APIRequest {
         guard var components = URLComponents(string: ChatbotAPI.baseURL) else {
             throw ChatbotError.failToMakeURL
         }
-        components.path += ""
+        components.path += "banner"
         
         return URLRequest(url: components.url!)
     }
