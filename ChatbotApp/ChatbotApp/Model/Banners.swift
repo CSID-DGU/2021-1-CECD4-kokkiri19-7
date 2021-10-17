@@ -12,7 +12,7 @@ struct Banners: Decodable {
     let redirectURLs: [String]?
     
     enum CodingKeys: String, CodingKey {
-        case imageURLs = "picture"
-        case redirectURLs = "address"
+        case imageURLs = "images"
+        case redirectURLs = "urls"
     }
 }

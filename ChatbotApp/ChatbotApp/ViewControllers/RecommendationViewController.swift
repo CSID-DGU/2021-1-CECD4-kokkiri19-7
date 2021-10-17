@@ -41,6 +41,7 @@ final class RecommendationViewController: UIViewController {
         super.viewDidLoad()
         configureRecommendationListView()
         bindViewModel()
+        viewModel.test()
     }
     
     private func configureRecommendationListView() {
