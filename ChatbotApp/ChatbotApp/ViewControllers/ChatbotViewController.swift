@@ -71,7 +71,7 @@ class ChatbotViewController: UIViewController {
     
     //MARK: - configure chatbot
     private func configureChatbot() {
-        Kommunicate.defaultConfiguration.backgroundColor = UIColor.chatBackgroundEnd
+        Kommunicate.defaultConfiguration.backgroundColor = .white
         setupChatbotNavigationBar()
         setupChatbotMessage()
         setupChatbar()
@@ -92,11 +92,12 @@ class ChatbotViewController: UIViewController {
     }
     
     private func setupChatbotMessage() {
-        KMMessageStyle.receivedBubble.color = UIColor.darkGray
-        KMMessageStyle.receivedMessage = KMStyle(font: .systemFont(ofSize: 14), text: .white)
+        KMMessageStyle.receivedBubble.color = UIColor.systemGray5
+        KMMessageStyle.receivedMessage = KMStyle(font: .systemFont(ofSize: 16), text: .black)
+        KMMessageStyle.time = KMStyle(font: .systemFont(ofSize: 12), text: .black)
         
         KMMessageStyle.sentBubble.color = UIColor.mainGreen
-        KMMessageStyle.sentMessage = KMStyle(font: .systemFont(ofSize: 14), text: .black)
+        KMMessageStyle.sentMessage = KMStyle(font: .systemFont(ofSize: 16), text: .black)
     }
     
     private func setupChatbar() {
