@@ -10,9 +10,9 @@ import Foundation
 struct UserSetting: Codable {
     let email: String
     let nickname: String
-    let gender: String
-    let age: Int
-    let birthday: Date
-    let city: String
-    let province: String
+    let gender: String?
+    let age: Int?
+    let birthday: Date?
+    let city: String?
+    let province: String?
 }
