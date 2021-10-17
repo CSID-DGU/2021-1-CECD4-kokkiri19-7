@@ -37,7 +37,7 @@ class ChatbotViewController: UIViewController {
     
     private func createConversation() {
         let botId = ["aibot-mgack"]
-        guard let email = User.shared.email else {
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String else {
             return
         }
         
@@ -53,14 +53,13 @@ class ChatbotViewController: UIViewController {
     }
     
     private func registerUser() {
-        kmUser.userId = User.shared.email
-        kmUser.displayName = User.shared.nickname
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String,
+              let nickname = UserDefaults.standard.object(forKey: "nickname") as? String else {
+                  return
+              }
+        kmUser.userId = email
+        kmUser.displayName = nickname
         kmUser.applicationId = Configuration.AppID
-        
-        let userMetaData = NSMutableDictionary()
-        userMetaData["sex"] = User.shared.gender?.rawValue
-        userMetaData["age"] = "\(User.shared.age)"
-        kmUser.metadata = userMetaData
         
         Kommunicate.registerUser(kmUser) { response, error in
             guard error == nil else {
