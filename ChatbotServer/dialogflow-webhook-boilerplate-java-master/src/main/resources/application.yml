@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active: local
+
+---
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatbot?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: '840606khd!'
+
+  #ddl-auto option : none, update, validate, create, create-drop
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true
+        format_sql: true
+  config:
+    activate:
+      on-profile: local
+logging.level:
+  org.hibernate.SQL: debug
+
+---
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://34.64.91.198:3306/chatbot?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: kimhyundo
+    password: '0000'
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        # show_sql: true
+        format_sql: true
+  config:
+    activate:
+      on-profile: dev
+logging.level:
+  org.hibernate.SQL: debug

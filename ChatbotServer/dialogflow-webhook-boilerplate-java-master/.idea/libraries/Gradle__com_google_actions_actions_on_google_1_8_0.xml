@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.actions:actions-on-google:1.8.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.actions/actions-on-google/1.8.0/4c3c71a26360b337a0afe4f3e5d27157a04ff132/actions-on-google-1.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.actions/actions-on-google/1.8.0/f6d0f13882397d596e91c75fb9b0a997bfcf61eb/actions-on-google-1.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

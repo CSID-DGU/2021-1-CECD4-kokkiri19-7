@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="dialogflow-webhook-boilerplate-java-master">
+    <output-path>$PROJECT_DIR$/out/artifacts/dialogflow_webhook_boilerplate_java_master</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="dialogflow-webhook-boilerplate-java-master" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

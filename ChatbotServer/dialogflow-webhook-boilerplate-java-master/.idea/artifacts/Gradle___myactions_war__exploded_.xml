@@ -1,0 +1,123 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : myactions.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/myactions.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/myactions.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="myactions.main/web/Web Gradle : myactions.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="myactions.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: com.google.actions:actions-on-google:1.8.0" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10" />
+          <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-validation:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4.10" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java-util:3.6.1" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-protobuf:1.15.1" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-stub:1.15.1" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-auth:1.15.1" />
+          <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.8.6" />
+          <element id="library" level="project" name="Gradle: com.google.auth:google-auth-library-oauth2-http:0.11.0" />
+          <element id="library" level="project" name="Gradle: com.google.http-client:google-http-client:1.24.1" />
+          <element id="library" level="project" name="Gradle: org.json:json:20180130" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.30" />
+          <element id="library" level="project" name="Gradle: commons-lang:commons-lang:2.3" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-netty-shaded:1.15.1" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.13.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-jpa:2.4.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.4.1" />
+          <element id="library" level="project" name="Gradle: jakarta.transaction:jakarta.transaction-api:1.3.3" />
+          <element id="library" level="project" name="Gradle: jakarta.persistence:jakarta.persistence-api:2.2.3" />
+          <element id="library" level="project" name="Gradle: org.hibernate:hibernate-core:5.4.25.Final" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aspects:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish:jakarta.el:3.0.3" />
+          <element id="library" level="project" name="Gradle: org.hibernate.validator:hibernate-validator:6.1.6.Final" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.10" />
+          <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+          <element id="library" level="project" name="Gradle: com.google.guava:guava:20.0" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-protobuf-lite:1.15.1" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-core:1.15.1" />
+          <element id="library" level="project" name="Gradle: com.google.api.grpc:proto-google-common-protos:1.0.0" />
+          <element id="library" level="project" name="Gradle: com.google.auth:google-auth-library-credentials:0.11.0" />
+          <element id="library" level="project" name="Gradle: com.google.http-client:google-http-client-jackson2:1.24.1" />
+          <element id="library" level="project" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.5.13" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:2.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:2.4.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-orm:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.3.2" />
+          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:3.4.5" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:5.3.2" />
+          <element id="library" level="project" name="Gradle: org.aspectj:aspectjweaver:1.9.6" />
+          <element id="library" level="project" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging:3.4.1.Final" />
+          <element id="library" level="project" name="Gradle: org.javassist:javassist:3.27.0-GA" />
+          <element id="library" level="project" name="Gradle: net.bytebuddy:byte-buddy:1.10.18" />
+          <element id="library" level="project" name="Gradle: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Gradle: org.jboss:jandex:2.1.3.Final" />
+          <element id="library" level="project" name="Gradle: com.fasterxml:classmate:1.5.1" />
+          <element id="library" level="project" name="Gradle: org.dom4j:dom4j:2.1.3" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.3" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.4.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot:2.4.1" />
+          <element id="library" level="project" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" />
+          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.27" />
+          <element id="library" level="project" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.11.3" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.3" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.11.3" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.11.3" />
+          <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.41" />
+          <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.41" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.3.2" />
+          <element id="library" level="project" name="Gradle: io.grpc:grpc-context:1.15.1" />
+          <element id="library" level="project" name="Gradle: io.opencensus:opencensus-contrib-grpc-metrics:0.12.3" />
+          <element id="library" level="project" name="Gradle: io.opencensus:opencensus-api:0.12.3" />
+          <element id="library" level="project" name="Gradle: com.google.errorprone:error_prone_annotations:2.2.0" />
+          <element id="library" level="project" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.17" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.11.3" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.14" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.15" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest:2.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.3.2" />
+          <element id="library" level="project" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:txw2:2.3.3" />
+          <element id="library" level="project" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.11" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.13.3" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jul-to-slf4j:1.7.30" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.11.3" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.3" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.22" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Gradle: com.sun.activation:jakarta.activation:1.2.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
