@@ -32,7 +32,7 @@ public class SeleniumTest {
         //selTest.screenshotTest();
         //selTest.getBanner();
         selTest.crawlJungguSaeng();
-        selTest.crawl_Junggu_Munhwa();
+        //selTest.crawl_Junggu_Munhwa();
         //selTest.searchJunggu();
         
     }
@@ -100,6 +100,24 @@ public class SeleniumTest {
             }
         }
         return sb.toString( );
+    }
+    public static String convertString(String val) {
+    	// 변환할 문자를 저장할 버퍼 선언
+    	StringBuffer sb = new StringBuffer();
+    	// 글자를 하나하나 탐색한다.
+    	for (int i = 0; i < val.length(); i++) {
+    	if ('\\' == val.charAt(i) && 'u' == val.charAt(i + 1)) {
+    	Character r = (char) Integer.parseInt(val.substring(i + 2, i + 6), 16);
+    	// 변환된 글자를 버퍼에 넣는다.
+    	sb.append(r);
+    	// for의 증가 값 1과 5를 합해 6글자를 점프
+    	i += 5;
+    	} else {
+    	sb.append(val.charAt(i));
+    	}
+    	}
+    	// 결과 리턴
+    	return sb.toString();
     }
     public static void ConnectionTest() {
             Connection conn = null;
@@ -231,80 +249,83 @@ public class SeleniumTest {
          "http://www.junggu.seoul.kr/content.do?cmsid=14386&sf_text4=I", //장애인
          "http://www.junggu.seoul.kr/content.do?cmsid=14386&sf_text4=H" }; //전 생애주기
         try {
-            driver.get(base_url[0]);
+        	for(int kinds = 0; kinds<9; kinds++) {
+        		driver.get(base_url[kinds]);
+                
+                JSONObject jsonObject = new JSONObject();
+                JSONArray saengArray = new JSONArray();
+                
+                
+                List<WebElement> el1 = driver.findElements(By.className("welfare_tit"));
+                List<WebElement> el3 = driver.findElements(By.className("welfare_bottom"));
+                String title ="";
+                String[] classification = {"임신,출산", "청년", "영유아", "아동,청소년", "청년", "중장년", "어르신", "장애인", "전 생애주기"};
+                String content = "";
+                String summary = "";
+                String url = "";
+                String site = "중구";
+                for(int i =0; i< el1.size(); i++) {
+                	WebElement el2 = el1.get(i);
+                	el2.click();
+                	Thread.sleep(100);
+                	WebElement el4 = el3.get(i);
+                	List<WebElement> titleEls = el4.findElements(By.cssSelector("dt"));
+                	List<WebElement> contentEls = el4.findElements(By.cssSelector("dd"));
+                	JSONObject saengInfo = new JSONObject();
+                	for(int j=0; j< titleEls.size(); j++) {
+                		String titleEl = titleEls.get(j).getAttribute("textContent");
+                		String contentEl = contentEls.get(j).getAttribute("textContent");
+                		contentEl = contentEl.replace("\n", "");
+                		contentEl = convertString(contentEl);
+                		if(titleEl.equals("연결 사이트")) {
+                			WebElement contentLink = el4.findElement(By.cssSelector("a"));
+                			url = contentLink.getAttribute("href");
+                			break;
+                		}
+                		if(j==0) {
+                			saengInfo.put("title", contentEl);
+                		}
+                		else {
+                			if(titleEl.equals("지원내용")) {
+                				String sum = titleEl + ": " + contentEl;
+                				summary += sum;
+                			}
+                			else if(titleEl.equals("지원내용")) {
+                				continue;
+                			}
+                			String body = titleEl + ": " + contentEl;
+                			body.replaceAll("\\\\r\\\\n", "");
+                			body.replaceAll("\\r\\n", "");
+                			body.replaceAll("\r\n", "");
+                			body.replaceAll("\n", "");
+                			content += body;
+                		}
+                	}
+                	saengInfo.put("classification", classification[kinds]);
+                	saengInfo.put("content", content);
+                	saengInfo.put("url", url);
+                	saengInfo.put("site", site);
+                	saengInfo.put("summary", summary);
+                	saengArray.add(saengInfo);
+                	saengInfo = new JSONObject();
+                	title ="";
+                    content = "";
+                    summary = "";
+                    url = "";
+                    site = "중구";
+                }
+                jsonObject.put("SAENG", saengArray);
+                String jsonInfo = jsonObject.toJSONString();
+                System.out.print(jsonPretty(jsonInfo));
+                try (FileWriter file = new FileWriter("saeng.json")) {
+                    file.write(saengArray.toJSONString()); 
+                    file.flush();
+         
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        	}
             
-            JSONObject jsonObject = new JSONObject();
-            JSONArray saengArray = new JSONArray();
-            
-            
-            List<WebElement> el1 = driver.findElements(By.className("welfare_tit"));
-            List<WebElement> el3 = driver.findElements(By.className("welfare_bottom"));
-            String title ="";
-            String classification = "복지";
-            String content = "";
-            String summary = "";
-            String url = "";
-            String site = "중구";
-            for(int i =0; i< el1.size(); i++) {
-            	WebElement el2 = el1.get(i);
-            	el2.click();
-            	WebElement el4 = el3.get(i);
-            	List<WebElement> titleEls = el4.findElements(By.cssSelector("dt"));
-            	List<WebElement> contentEls = el4.findElements(By.cssSelector("dd"));
-            	JSONObject saengInfo = new JSONObject();
-            	for(int j=0; j< titleEls.size(); j++) {
-            		String titleEl = titleEls.get(j).getAttribute("textContent");
-            		String contentEl = contentEls.get(j).getAttribute("textContent");
-            		contentEl = contentEl.replace("\n", "");
-            		if(titleEl.equals("연결 사이트")) {
-            			WebElement contentLink = el4.findElement(By.cssSelector("a"));
-            			url = contentLink.getAttribute("href");
-            			break;
-            		}
-            		if(j==0) {
-            			saengInfo.put("title", contentEl);
-            		}
-            		else {
-            			if(titleEl.equals("지원내용")) {
-            				String sum = titleEl + ": " + contentEl;
-            				summary += sum;
-            			}
-            			else if(titleEl.equals("지원내용")) {
-            				continue;
-            			}
-            			String body = titleEl + ": " + contentEl;
-            			body.replaceAll("\\\\r\\\\n", "");
-            			body.replaceAll("\\r\\n", "");
-            			body.replaceAll("\r\n", "");
-            			body.replaceAll("\n", "");
-            			body+="\n";
-            			content += body;
-            		}
-            	}
-            	saengInfo.put("classification", classification);
-            	saengInfo.put("content", content);
-            	saengInfo.put("url", url);
-            	saengInfo.put("site", site);
-            	saengInfo.put("summary", summary);
-            	saengArray.add(saengInfo);
-            	saengInfo = new JSONObject();
-            	title ="";
-                classification = "복지";
-                content = "";
-                summary = "";
-                url = "";
-                site = "중구";
-            }
-            jsonObject.put("SAENG", saengArray);
-            String jsonInfo = jsonObject.toJSONString();
-            System.out.print(jsonPretty(jsonInfo));
-            try (FileWriter file = new FileWriter("saeng.json")) {
-                file.write(saengArray.toJSONString()); 
-                file.flush();
-     
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         } catch (Exception e) {
             
             e.printStackTrace();
