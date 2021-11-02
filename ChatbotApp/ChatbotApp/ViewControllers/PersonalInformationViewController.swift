@@ -59,10 +59,17 @@ final class PersonalInformationViewController: UIViewController {
                     }
                 }
                 else {
-                    //MARK:-TODO
-                    // 토큰이 유효한 경우에는 바로 다음 화면으로 넘기면 됨
-                    // 여기서도 settedView이냐,, settingView이냐?
-                    self?.configureUserSettingView()
+                    //토큰이 유효한 경우
+                    if UserDefaults.standard.object(forKey: "city") != nil {
+                        self?.settingScrollView.isHidden = true
+                        self?.settedScrollView.isHidden = false
+                        self?.configureUserSettedView()
+                    }
+                    else {
+                        self?.settingScrollView.isHidden = false
+                        self?.settedScrollView.isHidden = true
+                        self?.configureUserSettingView()
+                    }
                 }
             }
         }
@@ -83,40 +90,45 @@ final class PersonalInformationViewController: UIViewController {
     
     //MARK:- UserSettingView
     private func configureUserSettingView() {
-        //MARK:-TODO Fix server
-        // 사용자가 수정 버튼 누른 경우 or 사용자가 맨 처음에 사용하는 경우
-        // 서버로부터 사용자 데이터 받아와서 이를 표시해주기
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String,
+              let nickname = UserDefaults.standard.object(forKey: "nickname") as? String else {
+                  return
+              }
+        let sex = UserDefaults.standard.object(forKey: "gender") as? String
+        let birthday = UserDefaults.standard.object(forKey: "birthday") as? Date
+        let city = UserDefaults.standard.object(forKey: "city") as? String
+        let province = UserDefaults.standard.object(forKey: "province") as? String
+        
         DispatchQueue.main.async {
-            self.nicknameLabel.text = User.shared.nickname
-            self.emailLabel.text = User.shared.email
+            self.nicknameLabel.text = nickname
+            self.emailLabel.text = email
             
-            if let sex = User.shared.gender {
+            if let sex = sex {
                 switch sex {
-                case .male:
+                case Gender.male.rawValue:
                     self.sexSegmentControl.selectedSegmentIndex = 0
-                case .female:
+                case Gender.female.rawValue:
                     self.sexSegmentControl.selectedSegmentIndex = 1
+                default:
+                    return
                 }
             }
             
-            if let birthday = User.shared.birthday {
+            if let birthday = birthday {
                 self.ageDatePicker.setDate(birthday, animated: true)
             }
             
-            if let city = User.shared.city {
+            if let city = city {
                 self.cityTextField.text = city
             }
             
-            if let province = User.shared.province {
+            if let province = province {
                 self.provinceTextField.text = province
             }
         }
     }
     
     private func getKakaoUserInformation() {
-        //MARK:-TODO
-        // 만약 서버에서 데이터가 없는 경우에는 여기서 사용자 정보를 가져옴과 동시에
-        // UserSettingView를 보여주자
         UserApi.shared.me { [weak self] (user, error) in
             if let error = error {
                 print(error)
@@ -126,6 +138,8 @@ final class PersonalInformationViewController: UIViewController {
             
             User.shared.nickname = nickname
             User.shared.email = email
+            UserDefaults.standard.set(email, forKey: "email")
+            UserDefaults.standard.set(nickname, forKey: "nickname")
             
             self?.configureUserSettingView()
         }
@@ -144,8 +158,12 @@ final class PersonalInformationViewController: UIViewController {
             User.shared.city = cityTextField.text
             User.shared.province = provinceTextField.text
             
+            UserDefaults.standard.set(ageDatePicker.date, forKey: "birthday")
+            UserDefaults.standard.set(Gender(rawValue: sexSegmentControl.titleForSegment(at: sexSegmentControl.selectedSegmentIndex)!)!.rawValue, forKey: "gender")
+            UserDefaults.standard.set(cityTextField.text, forKey: "city")
+            UserDefaults.standard.set(provinceTextField.text, forKey: "province")
+            
             //MARK:-TODO server
-            // 서버로 데이터 전송해주기 + 화면 전환 필요
             settingScrollView.isHidden = true
             configureUserSettedView()
             settedScrollView.isHidden = false
@@ -180,23 +198,25 @@ final class PersonalInformationViewController: UIViewController {
     
     //MARK:- UserSettedView
     private func configureUserSettedView() {
-        guard let nickname = User.shared.nickname,
-              let email = User.shared.email,
-              let sex = User.shared.gender,
-              let birthday = User.shared.birthday,
-              let city = User.shared.city,
-              let province = User.shared.province else {
-            return
-        }
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String,
+              let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
+              let sex = UserDefaults.standard.object(forKey: "gender") as? String,
+              let birthday = UserDefaults.standard.object(forKey: "birthday") as? Date,
+              let city = UserDefaults.standard.object(forKey: "city") as? String,
+              let province = UserDefaults.standard.object(forKey: "province") as? String else {
+                  return
+              }
         
         DispatchQueue.main.async {
             self.settedNicknameLabel.text = nickname
             self.settedEmailLabel.text = email
             switch sex {
-            case .male:
+            case Gender.male.rawValue:
                 self.settedGenderLabel.text = Gender.male.rawValue
-            case .female:
+            case Gender.female.rawValue:
                 self.settedGenderLabel.text = Gender.female.rawValue
+            default:
+                return
             }
             self.settedBirthdayLabel.text = CustomDateFormatter.birthdayFormatter.string(from: birthday)
             self.settedLocationLabel.text = "\(city) \(province)"
@@ -249,12 +269,17 @@ final class PersonalInformationViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }
+                self?.settingScrollView.isHidden = true
+                self?.settedScrollView.isHidden = true
+                
                 User.shared.reset()
                 self?.nicknameLabel.text = nil
                 self?.emailLabel.text = nil
                 self?.ageDatePicker.date = Date()
                 self?.cityTextField.text = nil
                 self?.provinceTextField.text = nil
+                UserDefaults.standard.removeObject(forKey: "email")
+                UserDefaults.standard.removeObject(forKey: "nickname")
                 
                 self?.moveToLoginViewController()
             }
@@ -301,8 +326,8 @@ extension PersonalInformationViewController: UIPickerViewDelegate, UIPickerViewD
         else if pickerView.tag == 2 {
             guard let selected = cityTextField.text,
                   let city = City(rawValue: selected) else {
-                return 0
-            }
+                      return 0
+                  }
             
             switch city {
             case .서울:
@@ -321,8 +346,8 @@ extension PersonalInformationViewController: UIPickerViewDelegate, UIPickerViewD
         else if pickerView.tag == 2 {
             guard let selected = cityTextField.text,
                   let city = City(rawValue: selected) else {
-                return ""
-            }
+                      return ""
+                  }
             
             switch city {
             case .서울:
@@ -342,8 +367,8 @@ extension PersonalInformationViewController: UIPickerViewDelegate, UIPickerViewD
         else if pickerView.tag == 2 {
             guard let selected = cityTextField.text,
                   let city = City(rawValue: selected) else {
-                return
-            }
+                      return
+                  }
             
             switch city {
             case .서울:
