@@ -38,15 +38,15 @@ final class HomeViewModel {
                 return
             }
             
-            guard let nickname = User.shared.nickname,
-                  let city = User.shared.city,
-                  let provicne = User.shared.province else {
+            guard let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
+                  let city = UserDefaults.standard.object(forKey: "city") as? String,
+                  let province = UserDefaults.standard.object(forKey: "province") as? String else {
                       print("사용자 정보 없음")
                       return
                   }
             
             self?.nicknameLabelText.value = "\(nickname)님 반갑습니다"
-            self?.locationLabelText.value = "\(city) \(provicne)의 최근소식"
+            self?.locationLabelText.value = "\(city) \(province)의 최근소식"
             self?.urls.value = banner.redirectURLs
             self?.characterImage.value = UIImage(named: "Character")
             
@@ -83,18 +83,44 @@ final class HomeViewModel {
     }
     
     func test() {
-        DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             var images = [UIImage]()
             for name in imagesExample {
                 images.append(UIImage(named: name)!)
             }
             
-            self.bannerImages.value = images
-            self.characterImage.value = UIImage(named: "Character")
-            self.nicknameLabelText.value = "연정민님 안녕하세요"
-            self.locationLabelText.value = "서울시 중구청 새로운 소식입니다"
+            guard let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
+                  let city = UserDefaults.standard.object(forKey: "city") as? String,
+                  let province = UserDefaults.standard.object(forKey: "province") as? String else {
+                      print("사용자 정보 없음")
+                      return
+                  }
             
-            self.urls.value = ["https://www.google.co.kr", "https://www.naver.com", "https://jryoun1.github.io", "https://www.junggu.seoul.kr/html/jg4u_2109.html"]
+            self.nicknameLabelText.value = "\(nickname)님 반갑습니다"
+            self.locationLabelText.value = "\(city) \(province)의 최근소식"
+            self.urls.value = ["https://www.junggu.seoul.kr/content.do?cmsid=15229",
+                               "http://www.junggu.seoul.kr/index.jsp#",
+                               "https://xn--ob0bj71amzcca52h0a49u37n.kr/ui/main.html",
+                               "https://blog.naver.com/junggu4u/222548859711",
+                               "http://www.junggu.seoul.kr/index.jsp#",
+                               "http://www.junggu.seoul.kr/content.do?cmsid=15225",
+                               "http://www.junggu.seoul.kr/content.do?cmsid=15197",
+                               "https://www.junggu.seoul.kr/content.do?cmsid=15229",
+                               "https://www.junggu.seoul.kr/content.do?cmsid=15229"]
+            self.characterImage.value = UIImage(named: "Character")
+            
+            let imageURLs = ["http://www.junggu.seoul.kr/main/14236_image_1.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_2.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_3.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_4.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_5.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_6.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_23.jpg",
+                             "http://www.junggu.seoul.kr/main/14236_image_1.jpg"
+            ]
+            for imageURL in imageURLs {
+                self.downloadImage(url: imageURL)
+            }
         }
     }
 }
