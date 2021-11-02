@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e157f9a1-7f8c-4029-a90f-20dcd0721730" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/120x120-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/120x120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/58x58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/60x60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/80x80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/87x87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Assets.xcassets/AppIcon.appiconset/스크린샷_2021-09-28_오후_11.53.59-removebg-preview 복사본.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/ViewControllers/TabBarController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../ChatbotApp/ChatbotApp/ViewControllers/TabBarController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +86,7 @@
       <workItem from="1634558382951" duration="2183000" />
       <workItem from="1634874742525" duration="5961000" />
       <workItem from="1635169213651" duration="29000" />
+      <workItem from="1635687692061" duration="34000" />
     </task>
     <servers />
   </component>
