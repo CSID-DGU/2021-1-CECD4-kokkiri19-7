@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import UserNotifications
 import KakaoSDKAuth
 import KakaoSDKUser
 
 final class TabBarController: UITabBarController {
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestNotificationAuthorization()
+        sendNotification(seconds: 60)
         
         registerNotification()
         
@@ -26,6 +31,34 @@ final class TabBarController: UITabBarController {
             self.selectedIndex = 3
         }
         
+    }
+    
+    private func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+        
+        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
+    private func sendNotification(seconds: Double) {
+        let notificationContent = UNMutableNotificationContent()
+        
+        notificationContent.title = "새로운 혜택, 소식이 올라왔습니다."
+        notificationContent.body = "자세히 보려면 해당 알림을 클릭하면 됩니다."
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
+        let request = UNNotificationRequest(identifier: "추천 알림",
+                                            content: notificationContent,
+                                            trigger: trigger)
+        
+        userNotificationCenter.add(request) { error in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     //MARK:- Notification

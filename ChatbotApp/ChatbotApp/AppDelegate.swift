@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 import CoreData
 import Kommunicate
 import KakaoSDKCommon
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         KakaoSDKCommon.initSDK(appKey: Configuration.KakaoNativeAppKey)
         Kommunicate.setup(applicationId: Configuration.AppID)
+        UNUserNotificationCenter.current().delegate = self
         if #available(iOS 13, *) {
             return true
         }
@@ -94,3 +96,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        guard var rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+            return
+        }
+        
+        if let tabBarController = rootViewController as? UITabBarController {
+            tabBarController.selectedIndex = 2
+        }
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        guard var rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+            return
+        }
+        
+        if let tabBarController = rootViewController as? UITabBarController {
+            tabBarController.selectedIndex = 2
+        }
+        
+        completionHandler([.list, .badge, .sound])
+    }
+}
