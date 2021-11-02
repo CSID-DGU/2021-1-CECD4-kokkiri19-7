@@ -36,7 +36,7 @@ class ChatbotViewController: UIViewController {
     }
     
     private func createConversation() {
-        let botId = ["aibot-mgack"]
+        let botId = ["--ovayc"]
         guard let email = UserDefaults.standard.object(forKey: "email") as? String else {
             return
         }
