@@ -37,19 +37,36 @@ class ChatbotViewController: UIViewController {
     
     private func createConversation() {
         let botId = ["--ovayc"]
-        guard let email = UserDefaults.standard.object(forKey: "email") as? String else {
-            return
+//        guard let email = UserDefaults.standard.object(forKey: "email") as? String else {
+//            return
+//        }
+        let kmConversation = KMConversationBuilder()
+            .withBotIds(botId)
+            .useLastConversation(false)
+            .build()
+        
+        Kommunicate.createConversation(conversation: kmConversation) { result in
+            switch result {
+            case .success(let conversationID):
+                print("Conversation id: ", conversationID)
+                Kommunicate.showConversationWith(groupId: conversationID,
+                                                 from: self) { success in
+
+                }
+            case.failure(let kmConversationError):
+                print(kmConversationError)
+            }
         }
         
-        Kommunicate.createConversation(
-            userId: email,
-            botIds: botId,
-            useLastConversation: false,
-            completion: { response in
-                guard !response.isEmpty else {return}
-                Kommunicate.showConversationWith(groupId: response, from: self, completionHandler: { success in
-                })
-            })
+//        Kommunicate.createConversation(
+//            userId: email,
+//            botIds: botId,
+//            useLastConversation: false,
+//            completion: { response in
+//                guard !response.isEmpty else {return}
+//                Kommunicate.showConversationWith(groupId: response, from: self, completionHandler: { success in
+//                })
+//            })
     }
     
     private func registerUser() {
