@@ -18,11 +18,14 @@ final class RecommendListViewModel {
         let getRecommendListAPIRequest = GetRecommendListAPIRequest()
         apiRequestLoader = APIRequestLoader(apiReqeust: getRecommendListAPIRequest)
         
-        guard let email = User.shared.email,
-              let nickname = User.shared.nickname else {
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String,
+              let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
+              let province = UserDefaults.standard.object(forKey: "province") as? String else {
+                  print("사용자 정보 없음")
                   return
               }
-        let userIdentifier = UserIdentifer(email: email, nickname: nickname)
+        
+        let userIdentifier = UserIdentifer(email: email, nickname: nickname, province: province)
         
         apiRequestLoader.loadAPIReqeust(requestData: userIdentifier) { [weak self] recommendList, error in
             if let error = error {

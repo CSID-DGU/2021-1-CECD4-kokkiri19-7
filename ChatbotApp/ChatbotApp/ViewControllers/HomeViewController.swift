@@ -32,8 +32,8 @@ final class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //viewModel.fetch()
-        viewModel.test()
+        viewModel.fetch()
+        //viewModel.test()
     }
     
     private func configureImageCollectionView() {

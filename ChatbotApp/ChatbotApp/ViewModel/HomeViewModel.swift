@@ -21,11 +21,15 @@ final class HomeViewModel {
         let getBannerAPIRequest = GetBannerAPIRequest()
         let apiRequestLoader = APIRequestLoader(apiReqeust: getBannerAPIRequest)
         
-        guard let email = User.shared.email,
-              let nickname = User.shared.nickname else {
+        guard let email = UserDefaults.standard.object(forKey: "email") as? String,
+              let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
+              let city = UserDefaults.standard.object(forKey: "city") as? String,
+              let province = UserDefaults.standard.object(forKey: "province") as? String else {
+                  print("사용자 정보 없음")
                   return
               }
-        let userIdentifier = UserIdentifer(email: email, nickname: nickname)
+        
+        let userIdentifier = UserIdentifer(email: email, nickname: nickname, province: province)
         
         apiRequestLoader.loadAPIReqeust(requestData: userIdentifier) { [weak self] banner, error in
             
@@ -37,13 +41,6 @@ final class HomeViewModel {
                 print("베너 정보 없음")
                 return
             }
-            
-            guard let nickname = UserDefaults.standard.object(forKey: "nickname") as? String,
-                  let city = UserDefaults.standard.object(forKey: "city") as? String,
-                  let province = UserDefaults.standard.object(forKey: "province") as? String else {
-                      print("사용자 정보 없음")
-                      return
-                  }
             
             self?.nicknameLabelText.value = "\(nickname)님 반갑습니다"
             self?.locationLabelText.value = "\(city) \(province)의 최근소식"
